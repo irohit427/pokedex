@@ -60,7 +60,7 @@ const Pokemon = () => {
         </div>
         
         <span className='text-xs font-light'>Evolutions</span>
-        <div className='flex gap-2'>
+        <div className='grid grid-cols-3 gap-2'>
           {evolutions?.map((pokemon: string) => (<EvolutionCard name={pokemon} key={pokemon} /> ))}
         </div>
       </div>
