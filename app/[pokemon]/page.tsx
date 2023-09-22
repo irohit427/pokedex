@@ -110,14 +110,14 @@ const Pokemon = () => {
                     <span className='text-xs'>Height</span>
                   </div>
                 </Card>
-                <Card className='px-4 flex flex-col justify-center items-center py-4 w-1/5'>
+                {speciesData?.habitat?.name && <Card className='px-4 flex flex-col justify-center items-center py-4 w-1/5'>
                   <div>
-                    <p className='capitalize'>{speciesData?.habitat.name}</p>
+                    <p className='capitalize'>{speciesData?.habitat?.name}</p>
                   </div>
                   <div>
                     <span className='text-xs'>Habitat</span>
                   </div>
-                </Card>
+                </Card>}
                 <Card className='px-4 flex flex-col justify-center items-center py-4 w-1/5'>
                   <div>
                     <p className='capitalize'>{speciesData?.growth_rate.name}</p>
