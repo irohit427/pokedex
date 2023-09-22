@@ -51,8 +51,8 @@ const Pokemon = () => {
     <>
     {pokemon === null && <p>Pokemon not found</p>}
     {pokemon && <div className='flex lg:flex-row justify-between md:flex-col pb-[1px]'>
-      <div className='w-1/3 px-10 flex flex-col gap-6'>
-        <div className='relative z-10 pt-10'>
+      <div className='w-1/3 px-10 flex flex-col items-center justify-start gap-6'>
+        <div>
           <Image src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} 
             width={400}
             height={400}
@@ -76,7 +76,7 @@ const Pokemon = () => {
             pokemon.types.map((type: any) => {
               return (
                 <div key={type.type.name}>
-                  <p>{}</p>
+                  
                   <Image src={pokemonTypes[type.type.name].image} alt={type.type.name} width={36} height={36} />
                 </div>
               )
@@ -96,7 +96,7 @@ const Pokemon = () => {
               <div className='flex gap-2'>
                 <Card className='px-4 flex flex-col justify-center items-center py-4 w-1/5'>
                   <div>
-                    <p>{(pokemon.weight / 10 * 2.20462).toFixed(2)}</p>
+                    <p>{(pokemon.weight / 10 * 2.20462).toFixed(2)} <span className='text-xs'>lbs</span></p>
                   </div>
                   <div>
                     <span className='text-xs'>Weight</span>
@@ -104,7 +104,7 @@ const Pokemon = () => {
                 </Card>
                 <Card className='px-4 flex flex-col justify-center items-center py-4 w-1/5'>
                   <div>
-                    <p>{pokemon.height/10} m</p>
+                    <p>{pokemon.height/10} <span className='text-xs'>m</span></p>
                   </div>
                   <div>
                     <span className='text-xs'>Height</span>
